@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (pickProductButton) {
         pickProductButton.addEventListener('click', function() {
+          
             const selectedProductId = document.getElementById("product-dropdown-out").value;
             const unitsToPick = parseInt(document.getElementById("product-out-unit").value, 10) || 1;
             console.log(`Selected product Picking: ${selectedProductId}, units: ${unitsToPick}`);
