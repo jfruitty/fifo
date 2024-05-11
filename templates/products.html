@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <link rel="stylesheet" href="./css/products.css">
+    <script type="text/javascript" src="/eel.js"></script>
+    <script src="js/products.js"></script>
+</head>
+
+<body>
+     <div class="navtop">
+         <a href="locationStock.html">กลับ</a>
+     </div>
+    <div class="product-container">
+        <h1>Product Catalog</h1>
+        <div class="form-container">
+    <h2>Add New Product</h2>
+    <form id="add-product-form" class="product-form">
+        <div class="form-group">
+            <label for="productname">Product Name</label>
+            <input type="text" id="productname" placeholder="Enter product name" required>
+        </div>
+        <div class="form-group">
+            <label for="productno">Product Number</label>
+            <input type="text" id="productno" placeholder="Enter product number" required>
+        </div>
+        <div class="form-group">
+            <label for="productqty">Quantity</label>
+            <input type="number" id="productqty" placeholder="Enter quantity" required>
+        </div>
+        <div class="form-group">
+            <label for="productunit">Unit</label>
+            <input type="text" id="productunit" placeholder="Unit (e.g., kg, pcs)" required>
+        </div>
+        <button type="submit" class="submit-btn">Add Product</button>
+        </form>
+    </div>
+
+<div id="product-table-container">
+    <table id="product-table">
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Product Number</th>
+                <th>Quantity</th>
+                <th>Unit</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Rows will be populated by JavaScript -->
+        </tbody>
+    </table>
+</div>
+
+
+
+    </div>
+</body>
+
+</html>

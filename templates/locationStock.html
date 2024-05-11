@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location Stock</title>
+    <link rel="stylesheet" href="./css/locationstock.css">
+</head>
+<body>
+
+
+     <div class="topnav">
+         <a href="order_in_history.html">ประวัติการเพิ่มสินค้า</a>
+         <a href="order_out_history.html">ประวัติการเบิกสินค้า</a>
+         <a href="products.html">จัดการรายการสินค้า</a>
+
+    </div>
+
+    
+    <div id="location-stock-container">
+        <!-- ตารางจะถูกแทรกโดย JavaScript -->
+    </div>
+    <br>
+    
+    <button id="submit-addproduct">เพิ่มสินค้าเข้าเอง</button>
+    <button id="submit-pickproduct">เบิกสินค้าเอง</button>
+    <br>
+    <select id="product-dropdown-out">
+        <!-- ตัวเลือกจะถูกแทรกโดย JavaScript -->
+    </select>
+    <input id="product-out-unit" placeholder="จำนวนที่ต้องการเบิก">
+    <button id="submit-pickproduct-action">Submit</button>
+    <button id="submit-pickproduct-auto">เบิกสินค้าตามคำแนะนำ</button>
+
+    <br>
+    <select id="product-dropdown-in">
+        <!-- ตัวเลือกจะถูกแทรกโดย JavaScript -->
+    </select>
+    <input id="product-in-unit" placeholder="จำนวนที่ต้องการเพิ่มสินค้า">
+    <button id="submit-addingproduct-action">Submit</button>
+    <button id="submit-addproduct-auto">เพิ่มสินค้าตามคำแนะนำ</button>
+
+
+    <br>
+   <!-- <div id="stock-product-container">
+         ตารางจะถูกแทรกโดย JavaScript 
+    </div>-->
+
+    <script type="text/javascript" src="/eel.js"></script>
+    <script src="js/locationstock.js"></script>
+    <script src="js/addinglocationstock.js"></script>
+    <script src="js/pickinglocationstock.js"></script>
+    <script src="js/recommend_out_product.js"></script>
+</body>
+</html>
