@@ -176,3 +176,22 @@ def create_no_slog(locations):
 
     finally:
         conn.close()
+
+
+def get_created_at(locationid):
+    conn = None
+    cursor = None
+    try:
+        conn, cursor = Connect()
+        cursor = conn.cursor()
+        cursor.execute("SELECT created_at FROM Location WHERE locationid = ?", (locationid,))
+        result = cursor.fetchone()
+        return result[0] if result else None
+    except Exception as e:
+        print('get_created_at error', e)
+        return None
+    finally:
+        if cursor:
+            cursor.close()
+        if conn:
+            conn.close()

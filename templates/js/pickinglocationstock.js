@@ -25,17 +25,29 @@ function cellClicked(cell) {
     const column = cell.getAttribute('data-column');
     selectedProductIdAdd = cell.getAttribute('data-productid'); // Capture product ID when clicking a cell
     cell.classList.toggle('selected');
+    // showTooltip();
 
     if (cell.classList.contains('selected')) {
         selectedLocationIds.push(locationid);
-        cell.style = "background-color: rgb(255, 215, 0)";
+        cell.style = 'background-color: rgb(255, 215, 0)';
     } else {
-        selectedLocationIds = selectedLocationIds.filter(id => id !== locationid);
-        cell.style = "";
+        selectedLocationIds = selectedLocationIds.filter(
+            (id) => id !== locationid
+        );
+        cell.style = '';
     }
 
-
-    console.log(`Location ID Pick ${locationid} is now ${cell.classList.contains('selected') ? 'selected' : 'not selected'} `);
+    console.log(
+        `Location ID Pick ${locationid} is now ${
+            cell.classList.contains('selected') ? 'selected' : 'not selected'
+        } `
+    );
 }
 
+// let cells = document.querySelectorAll('[data-locationid]');
 
+// Attach the event listeners
+// cells.forEach((cell) => {
+//     cell.addEventListener('click', showTooltip);
+//     cell.addEventListener('mouseout', hideTooltip);
+// });

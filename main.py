@@ -2,7 +2,7 @@ import eel
 from user import login_user
 from connect import Connect
 from models import create_table_users, create_table_products,create_table_location,create_inoder
-from location import create_location,in_location, out_location, assign_group_to_location,slog_no_location, create_no_slog
+from location import create_location,in_location, out_location, assign_group_to_location,slog_no_location, create_no_slog, get_created_at
 from groupLocation import gropNo
 import datetime
 from flask import make_response , session
@@ -366,6 +366,25 @@ def fetch_order_out_history():
     finally:
         conn.close()
     return orders
+
+@eel.expose
+def get_created_at(locationid):
+    conn = None
+    cursor = None
+    try:
+        conn, cursor = Connect()
+        cursor = conn.cursor()
+        cursor.execute("SELECT created_at FROM Location WHERE locationid = ?", (locationid,))
+        result = cursor.fetchone()
+        return result[0] if result else None
+    except Exception as e:
+        print('get_created_at error', e)
+        return None
+    finally:
+        if cursor:
+            cursor.close()
+        if conn:
+            conn.close()
 
 
 
