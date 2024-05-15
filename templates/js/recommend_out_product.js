@@ -158,10 +158,10 @@ let productQtyControlIn = document.getElementById('product-in-unit');
 let productIdControlIn = document.getElementById('product-dropdown-in');
 
 // Event listener for quantity control
-productQtyControl.addEventListener('change', function () {
+productQtyControl.addEventListener('input', function () {
     clearSelection();
 });
-productQtyControlIn.addEventListener('change', function () {
+productQtyControlIn.addEventListener('input', function () {
     clearSelection();
 });
 
