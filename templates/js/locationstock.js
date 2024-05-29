@@ -60,7 +60,7 @@ function createTable(locations) {
                     location['productid'] || ''
                 }' data-locationid='${
                     location['locationid']
-                }' onmouseover='showTooltip(event,this)' onmouseout='hideTooltip(event)' onclick='cellClicked(this)'>${
+                }' onmouseover='startTooltipTimer(event,this)' onmouseout='cancelTooltipTimer(this)' onclick='cellClicked(this)'>${
                     location['productid'] || ' '
                 }</td>`;
 
@@ -163,6 +163,14 @@ function adjustTooltipPosition(tooltip, e) {
     tooltip.style.top = `${top + offset}px`; // Add an offset to position the tooltip lower
 }
 
+let tooltipTimer = null;
+
+function startTooltipTimer(e, cell) {
+    tooltipTimer = setTimeout(() => {
+        showTooltip(e, cell);
+    }, 2000); // 3000ms = 3 seconds
+}
+
 // Tooltip functionality
 function showTooltip(e, locations) {
     const cell = e.target;
@@ -170,6 +178,8 @@ function showTooltip(e, locations) {
 
     // Fetch created_at value from the database
     eel.get_created_at(locationid)((createdAt) => {
+
+
         // Set the tooltip text to the created_at value
         const tooltipText = createdAt ? createdAt : 'No data';
         const tooltip = createTooltip(e, tooltipText);
@@ -182,10 +192,23 @@ function showTooltip(e, locations) {
     });
 }
 
-function hideTooltip(e) {
-    // Remove tooltip from cell
-    let tooltip = e.target.querySelector('.tooltip');
-    if (tooltip) {
-        e.target.removeChild(tooltip);
+
+function cancelTooltipTimer(cell) {
+    if (tooltipTimer) {
+        clearTimeout(tooltipTimer);
+        tooltipTimer = null;
+    }
+    const existingTooltip = cell.querySelector('.tooltip');
+    if (existingTooltip) {
+        existingTooltip.remove();
     }
 }
+
+
+//function hideTooltip(e) {
+//    // Remove tooltip from cell
+//    let tooltip = e.target.querySelector('.tooltip');
+//    if (tooltip) {
+//        e.target.removeChild(tooltip);
+//    }
+//}
