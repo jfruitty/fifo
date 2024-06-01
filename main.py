@@ -259,6 +259,7 @@ def mark_location_adding(productid, count):
             locid, is_empty = cursor.fetchone()
 
             if is_empty:
+                print(locid)
                 location_ids.append(locid)
                 placed_count += 1
 

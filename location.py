@@ -111,7 +111,9 @@ def slog_no_location():
         {'row': 2, 'column': 26, 'no': 1},{'row': 1, 'column': 27, 'no': 1},{'row': 2, 'column': 27, 'no': 1},{'row': 1, 'column': 28, 'no': 1},
         {'row': 2, 'column': 28, 'no': 1},{'row': 1, 'column': 29, 'no': 1},{'row': 2, 'column': 29, 'no': 1},{'row': 1, 'column': 30, 'no': 1},
         {'row': 2, 'column': 30, 'no': 1},{'row': 1, 'column': 31, 'no': 1},{'row': 2, 'column': 31, 'no': 1},{'row': 1, 'column': 32, 'no': 1},
-        {'row': 2, 'column': 32, 'no': 1},{'row': 1, 'column': 33, 'no': 1},{'row': 2, 'column': 33, 'no': 1}, {'row': 3, 'column': 14, 'no': 2},
+        {'row': 2, 'column': 32, 'no': 1},{'row': 1, 'column': 33, 'no': 1},{'row': 2, 'column': 33, 'no': 1},
+        
+        {'row': 3, 'column': 14, 'no': 2},
         {'row': 3, 'column': 15, 'no': 2},{'row': 3, 'column': 16, 'no': 2},{'row': 3, 'column': 17, 'no': 2},{'row': 3, 'column': 18, 'no': 2},
         {'row': 3, 'column': 19, 'no': 2},{'row': 3, 'column': 20, 'no': 2},{'row': 3, 'column': 21, 'no': 2},{'row': 3, 'column': 22, 'no': 2},
         {'row': 3, 'column': 23, 'no': 2},{'row': 3, 'column': 24, 'no': 2}, {'row': 3, 'column': 20, 'no': 2},{'row': 3, 'column': 21, 'no': 2},
